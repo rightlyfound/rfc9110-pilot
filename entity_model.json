@@ -1,0 +1,25 @@
+{
+  "note": "Skeleton. ~20 of ~100 expected entries. Build incrementally.",
+  "entities": [
+    {"id":"e001","name":"GET","type":"method","rfc":"9110","section":"§9.3.1"},
+    {"id":"e002","name":"HEAD","type":"method","rfc":"9110","section":"§9.3.2"},
+    {"id":"e003","name":"POST","type":"method","rfc":"9110","section":"§9.3.3"},
+    {"id":"e004","name":"PUT","type":"method","rfc":"9110","section":"§9.3.4"},
+    {"id":"e005","name":"DELETE","type":"method","rfc":"9110","section":"§9.3.5"},
+    {"id":"e006","name":"OPTIONS","type":"method","rfc":"9110","section":"§9.3.7"},
+    {"id":"e007","name":"TRACE","type":"method","rfc":"9110","section":"§9.3.8"},
+    {"id":"e008","name":"MUST","type":"keyword","rfc":"2119","section":"§1"},
+    {"id":"e009","name":"MUST NOT","type":"keyword","rfc":"2119","section":"§2"},
+    {"id":"e010","name":"SHOULD","type":"keyword","rfc":"2119","section":"§4"},
+    {"id":"e011","name":"MAY","type":"keyword","rfc":"2119","section":"§5"},
+    {"id":"e012","name":"no-store","type":"directive","rfc":"9111","section":"§5.2.2.5"},
+    {"id":"e013","name":"no-cache","type":"directive","rfc":"9111","section":"§5.2.2.2"},
+    {"id":"e014","name":"must-revalidate","type":"directive","rfc":"9111","section":"§5.2.2.2"},
+    {"id":"e015","name":"s-maxage","type":"directive","rfc":"9111","section":"§5.2.2.10"},
+    {"id":"e016","name":"proxy-revalidate","type":"directive","rfc":"9111","section":"§5.2.2.11"},
+    {"id":"e017","name":"Vary","type":"header_field","rfc":"9110","section":"§12.5.5"},
+    {"id":"e018","name":"Authorization","type":"header_field","rfc":"9110","section":"§11.6.2"},
+    {"id":"e019","name":"4xx","type":"status_class","rfc":"9110","section":"§15.5"},
+    {"id":"e020","name":"5xx","type":"status_class","rfc":"9110","section":"§15.6"}
+  ]
+}

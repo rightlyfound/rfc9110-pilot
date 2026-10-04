@@ -1,20 +1,20 @@
-1. HTTP is a stateless application-level protocol for distributed, collaborative, hypertext information systems.
-2. A resource cannot treat a request in a manner inconsistent with the semantics of the method of the request.
-3. Safe methods (GET, HEAD, OPTIONS, TRACE) MUST NOT have side effects beyond what are incidental to the method's semantics.
-4. Idempotent methods (GET, HEAD, OPTIONS, TRACE, PUT, DELETE) MUST produce the same result on the server regardless of how many times the request is repeated.
-5. The GET method requests transfer of a current selected representation for the target resource.
-6. The HEAD method is identical to GET except that the server MUST NOT send content in the response.
-7. POST requests that the target resource process the representation enclosed in the request according to the resource's own specific semantics.
-8. PUT requests that the target resource create or update its state with the state defined by the representation enclosed in the request.
-9. DELETE requests that the origin server remove the association between the target resource and its current functionality.
-10. CONNECT requests that the proxy establish a tunnel to the server identified by the target resource.
-11. OPTIONS requests target resource capabilities prior to performing a request action.
-12. TRACE requests a loopback of the request message for diagnostic purposes.
-13. 2xx status codes indicate the client's request was successfully received, understood, and accepted.
-14. 3xx status codes indicate further action needs to be taken by the user agent to fulfill the request.
-15. 4xx status codes indicate the client has erred in forming the request.
-16. 5xx status codes indicate the server has erred or is incapable of performing the requested action.
-17. The Vary header field describes which request header fields influenced the selection of the response representation.
-18. If-Match and If-None-Match preconditions are evaluated using ETag validators; If-Modified-Since and If-Unmodified-Since use Last-Modified timestamps.
-19. Content negotiation allows selection among multiple representations based on Accept, Accept-Charset, Accept-Encoding, and Accept-Language fields.
-20. HTTP authentication uses WWW-Authenticate, Proxy-Authenticate, Authorization, and Proxy-Authorization header fields to establish credentials in a protection space (realm).
+1. HTTP is a stateless application-level protocol for distributed, collaborative, hypertext information systems. [RFC 9110 §1]
+2. A resource cannot treat a request in a manner inconsistent with the semantics of the method of the request. [RFC 9110 §9.1]
+3. Safe methods (GET, HEAD, OPTIONS, TRACE) are defined as not requesting side effects from the server, but this definition does not prevent implementations from including behavior that is potentially harmful, not entirely read-only, or that causes side effects. [RFC 9110 §9.2.1]
+4. Idempotent methods (GET, HEAD, OPTIONS, TRACE, PUT, DELETE) are defined such that the intended effect on the server of multiple identical requests is the same as the effect for a single such request. [RFC 9110 §9.2.2]
+5. The GET method requests transfer of a current selected representation for the target resource. [RFC 9110 §9.3.1]
+6. The HEAD method is identical to GET except that the server MUST NOT send content in the response. [RFC 9110 §9.3.2]
+7. POST requests that the target resource process the representation enclosed in the request according to the resource's own specific semantics. [RFC 9110 §9.3.3]
+8. PUT requests that the target resource create or replace its state with the state defined by the representation enclosed in the request. [RFC 9110 §9.3.4]
+9. DELETE requests that the origin server remove the association between the target resource and its current functionality. [RFC 9110 §9.3.5]
+10. In RFC 2119 and RFC 8174, the key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" are to be interpreted as described only when they appear in all capitals. [RFC 2119 §1-5][RFC 8174 §2]
+11. RFC 8174 updates RFC 2119 by clarifying that non-capitalized uses of "must", "should", "may" have their normal English meanings and are not affected by the requirement-level definitions. [RFC 8174 §2]
+12. A cache MUST NOT store a response to a request if the no-store cache directive is present in the response. [RFC 9111 §5.2.2.5]
+13. A shared cache MUST NOT use a cached response to a request with an Authorization header field unless the response contains a Cache-Control directive (must-revalidate, public, or s-maxage) that explicitly allows shared caching. [RFC 9111 §3.5]
+14. A cache MUST NOT generate a stale response if it is prohibited by an explicit in-protocol directive such as no-cache, must-revalidate, s-maxage, or proxy-revalidate. [RFC 9111 §4.2.4]
+15. 4xx (Client Error) status codes indicate that the client seems to have erred. [RFC 9110 §15.5]
+16. 5xx status codes indicate the server is aware that it has erred or is incapable of performing the requested method. [RFC 9110 §15.6]
+17. The Vary header field describes what parts of a request message, aside from the method and target URI, might influence the origin server's process for selecting the content of this response. [RFC 9110 §12.5.5]
+18. A cache MUST NOT use a stored response with Vary: * for any subsequent request because the asterisk value always fails to match. [RFC 9111 §4.1]
+19. HTTP/1.1 uses a text-based message format where each message consists of a start-line, zero or more header fields, an empty line, and an optional content body. [RFC 9112 §2]
+20. Transfer coding and content coding are distinct transformations applied to the content; transfer coding is used to safely transport the message, while content coding transforms the representation itself. [RFC 9112 §6-7]

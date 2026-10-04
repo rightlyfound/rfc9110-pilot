@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RFC Binding Annotation",
+  "type": "object",
+  "required": ["claim_id", "claim_text", "upstream", "open_slots",
+               "annotator_notes", "header_fenced"],
+  "properties": {
+    "claim_id":     { "type": "integer", "minimum": 1, "maximum": 20 },
+    "claim_text":   { "type": "string" },
+    "upstream": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "required": ["rfc", "section", "quote"],
+        "properties": {
+          "rfc":     { "type": "string" },
+          "section": { "type": "string" },
+          "quote":   { "type": "string" }
+        }
+      }
+    },
+    "open_slots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["slot_type", "description"],
+        "properties": {
+          "slot_type": {
+            "type": "string",
+            "enum": ["undefined_term", "missing_antecedent",
+                     "implicit_premise", "ambiguous_scope"]
+          },
+          "description": { "type": "string" }
+        }
+      }
+    },
+    "annotator_notes": { "type": "string" },
+    "header_fenced":   { "type": "boolean" }
+  }
+}
