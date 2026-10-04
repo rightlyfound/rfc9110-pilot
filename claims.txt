@@ -1,0 +1,20 @@
+1. HTTP is a stateless application-level protocol for distributed, collaborative, hypertext information systems.
+2. A resource cannot treat a request in a manner inconsistent with the semantics of the method of the request.
+3. Safe methods (GET, HEAD, OPTIONS, TRACE) MUST NOT have side effects beyond what are incidental to the method's semantics.
+4. Idempotent methods (GET, HEAD, OPTIONS, TRACE, PUT, DELETE) MUST produce the same result on the server regardless of how many times the request is repeated.
+5. The GET method requests transfer of a current selected representation for the target resource.
+6. The HEAD method is identical to GET except that the server MUST NOT send content in the response.
+7. POST requests that the target resource process the representation enclosed in the request according to the resource's own specific semantics.
+8. PUT requests that the target resource create or update its state with the state defined by the representation enclosed in the request.
+9. DELETE requests that the origin server remove the association between the target resource and its current functionality.
+10. CONNECT requests that the proxy establish a tunnel to the server identified by the target resource.
+11. OPTIONS requests target resource capabilities prior to performing a request action.
+12. TRACE requests a loopback of the request message for diagnostic purposes.
+13. 2xx status codes indicate the client's request was successfully received, understood, and accepted.
+14. 3xx status codes indicate further action needs to be taken by the user agent to fulfill the request.
+15. 4xx status codes indicate the client has erred in forming the request.
+16. 5xx status codes indicate the server has erred or is incapable of performing the requested action.
+17. The Vary header field describes which request header fields influenced the selection of the response representation.
+18. If-Match and If-None-Match preconditions are evaluated using ETag validators; If-Modified-Since and If-Unmodified-Since use Last-Modified timestamps.
+19. Content negotiation allows selection among multiple representations based on Accept, Accept-Charset, Accept-Encoding, and Accept-Language fields.
+20. HTTP authentication uses WWW-Authenticate, Proxy-Authenticate, Authorization, and Proxy-Authorization header fields to establish credentials in a protection space (realm).
